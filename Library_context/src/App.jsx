@@ -24,7 +24,7 @@ const App = () => {
    return (
       <div>
          <GlobalStyles />
-         <BrowserRouter>
+         <HashRouter>
             <AppProvider contexts={[BookProvider, AuthProvider]}>
                <Wrap>
                   <Header />
@@ -36,11 +36,12 @@ const App = () => {
                      <Route path="/edit">
                         <Route path=":editID" element={<Edit />} />
                      </Route>
+                     <Route path="/*" element={<Home />} />
                   </Routes>
                   <Footer />
                </Wrap>
             </AppProvider>
-         </BrowserRouter>
+         </HashRouter>
       </div>
    );
 };
